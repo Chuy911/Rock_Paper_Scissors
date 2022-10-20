@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         function getComputerChoice(){
+            let random = Math.random() * 3+1;
+            return Math.floor(random);
+         };
+         function playRound(playerSelection,computerSelection){
+            playerSelection = playerSelection.toUpperCase();
+            computerSelection = computerSelection.toUpperCase();
+            let tie = "You tied against the computer."
+            let alert = "This wasn't a suitable entry.";
+            let win = "Congratulations! You won!!";
+            let lose = "Sorry but you lost."
+            if(playerSelection.includes("ROCK") || playerSelection.includes("PAPER") || playerSelection.includes("SCISSORS"))
+            {
+                if(playerSelection === computerSelection)
+                    return tie;
+                
+                if(playerSelection.includes("ROCK") && computerSelection.includes("PAPER"))
+                return lose;
+
+                else return win;
+
+                if(playerSelection.includes("PAPER") && computerSelection.includes("SCISSORS"))
+                return lose;
+                
+                else return win;
+
+                if(playerSelection.includes("SCISSORS") && computerSelection.includes("ROCK"))
+                return lose;
+                
+                else return win;
+            }
+            else
+            {
+                
+                return alert;
+            }
+
+         };
+         console.log(getComputerChoice());
+
+    </script>
+    
+</body>
+</html>
