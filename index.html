@@ -17,10 +17,10 @@
          function playRound(playerSelection,computerSelection){
             playerSelection = playerSelection.toUpperCase();
             computerSelection = computerSelection.toUpperCase();
-            let alert = "This wasn't a suitable entry.";
-            let tie = "You tied against the computer."
-            let win = "Congratulations! You won!!";
-            let lose = "Sorry but you lost."
+            let alert = "That wasn't a suitable entry.";
+            let tie = "You tied this round."
+            let win = "You won this round";
+            let lose = "You lost this round."
             if(playerSelection.includes("ROCK") || playerSelection.includes("PAPER") || playerSelection.includes("SCISSORS"))
             {
                 if(playerSelection === computerSelection)
@@ -67,7 +67,24 @@
                 losestreak++;
                 console.log(result);
                 }
+                if(result.includes('tied'))
+                {
+                    console.log(result);
+                }
+                if(result.includes('suitable'))
+                {
+                    i--;
+                    console.log(result);
+                }
             }
+            if(winstreak > losestreak)
+            console.log("Congratulations! You won!");
+            else
+            if(losestreak > winstreak)
+            console.log("Sorry but you lost against the computer");
+            else
+            console.log("What do you know, you both tied");
+            
         };
 
         game();
