@@ -9,14 +9,16 @@
 <body>
     <script>
          function getComputerChoice(){
-            let random = Math.random() * 3+1;
-            return Math.floor(random);
+            let random = Math.random() * 3;
+            random = Math.floor(random);
+            let choices = ["rock","paper","scissors"];
+            return choices[random];
          };
          function playRound(playerSelection,computerSelection){
             playerSelection = playerSelection.toUpperCase();
             computerSelection = computerSelection.toUpperCase();
-            let tie = "You tied against the computer."
             let alert = "This wasn't a suitable entry.";
+            let tie = "You tied against the computer."
             let win = "Congratulations! You won!!";
             let lose = "Sorry but you lost."
             if(playerSelection.includes("ROCK") || playerSelection.includes("PAPER") || playerSelection.includes("SCISSORS"))
@@ -47,6 +49,7 @@
 
          };
          console.log(getComputerChoice());
+
 
     </script>
     
