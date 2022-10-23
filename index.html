@@ -5,92 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="rps.js" defer></script>
 </head>
 <body>
-    <script>
-         function getComputerChoice(){
-            let random = Math.random() * 3;
-            random = Math.floor(random);
-            let choices = ["rock","paper","scissors"];
-            return choices[random];
-         };
-         function playRound(playerSelection,computerSelection){
-            playerSelection = playerSelection.toUpperCase();
-            computerSelection = computerSelection.toUpperCase();
-            let alert = "That wasn't a suitable entry.";
-            let tie = "You tied this round."
-            let win = "You won this round";
-            let lose = "You lost this round."
-            if(playerSelection.includes("ROCK") || playerSelection.includes("PAPER") || playerSelection.includes("SCISSORS"))
-            {
-                if(playerSelection === computerSelection)
-                    return tie;
-                
-                if(playerSelection.includes("ROCK") && computerSelection.includes("PAPER"))
-                return lose;
 
-                else return win;
+    <div>
+        <button class="Rock">Rock</button>
+        <button class="Paper">Paper</button>
+        <button class="Scissors">Scissors</button>
+    </div>
+    <div class="Results"></div>
 
-                if(playerSelection.includes("PAPER") && computerSelection.includes("SCISSORS"))
-                return lose;
-                
-                else return win;
-
-                if(playerSelection.includes("SCISSORS") && computerSelection.includes("ROCK"))
-                return lose;
-                
-                else return win;
-            }
-            else
-            {
-                
-                return alert;
-            }
-
-         };
-         
-        function game(){
-            let winstreak = 0;
-            let losestreak = 0;
-
-            for(let i = 0; i<5;i++)
-            {
-                let input = prompt("Whats your weapon of choice? Rock/Paper/Scissors");
-                let result = playRound(input,getComputerChoice());
-                if(result.includes('won'))
-                {
-                winstreak++;
-                console.log(result);
-                }
-                if(result.includes('lost'))
-                {
-                losestreak++;
-                console.log(result);
-                }
-                if(result.includes('tied'))
-                {
-                    console.log(result);
-                }
-                if(result.includes('suitable'))
-                {
-                    i--;
-                    console.log(result);
-                }
-            }
-            if(winstreak > losestreak)
-            console.log("Congratulations! You won!");
-            else
-            if(losestreak > winstreak)
-            console.log("Sorry but you lost against the computer");
-            else
-            console.log("What do you know, you both tied");
-            
-        };
-
-        game();
-
-
-    </script>
     
 </body>
 </html>
